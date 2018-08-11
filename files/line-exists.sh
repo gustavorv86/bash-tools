@@ -3,9 +3,9 @@
 line_exists() {
 	if [[ ${#} -ne 2 ]]; then
 		
-		echomsg 'ERROR: invalid parameters'
-		
+		echo 'ERROR: invalid parameters'
 		return 2
+		
 	fi
 	
 	local line=${1}
