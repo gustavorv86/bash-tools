@@ -6,10 +6,6 @@ show_help() {
 }
 
 MPG123=`command -v mpg123`
-if [[ ! ${MPG123} ]]; then
-	sudo 'apt-get update && apt-get -y install mpg123'
-	MPG123=`command -v mpg123`
-fi
 
 if [[ ! ${1} ]]; then
 	show_help

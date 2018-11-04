@@ -6,10 +6,6 @@ show_help() {
 }
 
 UFRAW=`command -v ufraw-batch`
-if [[ ! ${MPG123} ]]; then
-	sudo apt-get install ufraw-batch
-	UFRAW=`command -v ufraw-batch`
-fi
 
 if [[ ! ${1} ]]; then
 	show_help

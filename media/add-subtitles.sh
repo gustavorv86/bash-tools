@@ -6,10 +6,6 @@ if [[ ${#} -ne 3 ]]; then
 fi
 
 MENCODER=`command -v mencoder`
-if [[ ! ${MPG123} ]]; then
-	sudo apt-get install mencoder
-	MENCODER=`command -v mencoder`
-fi
 
 echo 'Video input:  '${1}
 echo 'Subtitles:    '${2}
