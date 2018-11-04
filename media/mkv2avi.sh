@@ -12,7 +12,7 @@ if [[ ! ${1} ]]; then
 fi
 
 for mkvfile in ${@}; do
-	avifile=${mkvfile%.mkv}'.mp4'
+	avifile=${mkvfile%.mkv}'.avi'
 	${MENCODER} ${mkvfile} -ovc xvid -oac mp3lame -oac mp3lame -lameopts abr:br=192 -xvidencopts pass=2:bitrate=-700000 -o ${avifile}
 done
 
