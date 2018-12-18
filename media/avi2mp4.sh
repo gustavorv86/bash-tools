@@ -1,7 +1,7 @@
 #! /bin/bash
 
 show_help() {
-	echo 'Usage: '`basename ${0}`' [file.mkv...]'
+	echo "Usage: "`basename ${0}`" [file.avi...]"
 	exit 1
 }
 
@@ -11,10 +11,10 @@ if [[ ! ${1} ]]; then
 	show_help
 fi
 
-for avifile in ${@}; do
-    mp4file=${avifile%.avi}'.mp4'
-    ${FFMPEG} -i ${avifile} ${mp4file}
+for avifile in "${@}"; do
+	mp4file=${avifile%.avi}".mp4"
+	echo "Output: "${mp4file}
+	${FFMPEG} -i "${avifile}" "${mp4file}"
 done
 
 exit 0
-

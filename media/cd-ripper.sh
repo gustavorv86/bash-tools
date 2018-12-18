@@ -28,4 +28,3 @@ mv *.mp3 ${OUTPUT}
 
 echo "Output directory: "${OUTPUT}
 espeak "CD ripper has been finished"
-

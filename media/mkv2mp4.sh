@@ -1,7 +1,7 @@
 #! /bin/bash
 
 show_help() {
-	echo 'Usage: '`basename ${0}`' [file.mkv...]'
+	echo "Usage: "`basename ${0}`" [file.mkv...]"
 	exit 1
 }
 
@@ -11,9 +11,11 @@ if [[ ! ${1} ]]; then
 	show_help
 fi
 
-for mkvfile in ${@}; do
-    mp4file=${mkvfile%.mkv}'.mp4'
-    ${FFMPEG} -i ${mkvfile} -codec copy ${mp4file}
+for mkvfile in "${@}"; do
+	mp4file=${mkvfile%.mkv}".mp4"
+	echo "Output: "${mp4file}
+	${FFMPEG} -i "${mkvfile}" -codec copy "${mp4file}"
 done
 
 exit 0
+
